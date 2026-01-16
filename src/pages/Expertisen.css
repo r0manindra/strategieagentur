@@ -1,17 +1,22 @@
 /* Hero Section */
 .expertisen-hero {
-  padding: 120px 0 48px;
-  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
+  padding: 80px 0 40px;
+  background: var(--color-bg);
 }
 
 .expertisen-hero-content {
   text-align: center;
 }
 
+.expertisen-hero h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
 /* Industries Section */
 .industries-section {
   background: var(--color-bg);
   position: relative;
+  padding: 56px 0;
 }
 
 .industries-section::before {
@@ -20,7 +25,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 64px);
+  width: calc(100% - 48px);
   max-width: var(--max-width);
   height: 1px;
   background: var(--color-border);
@@ -32,15 +37,15 @@
   gap: 1px;
   background: var(--color-border);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .industry-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 18px 16px;
+  gap: 10px;
+  padding: 14px 12px;
   background: var(--color-bg);
   transition: var(--transition);
 }
@@ -50,72 +55,74 @@
 }
 
 .industry-number {
-  font-size: 0.625rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  letter-spacing: 0.05em;
+  font-size: 0.5625rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.1em;
   flex-shrink: 0;
+  opacity: 0.5;
 }
 
 .industry-name {
-  font-size: 0.8125rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 450;
   color: var(--color-text);
 }
 
 /* Brochures Section */
 .brochures-section {
   background: var(--color-bg-secondary);
+  padding: 56px 0;
 }
 
 .brochure-card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: 32px 28px;
+  padding: 24px 20px;
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 6px;
   background: var(--color-bg);
   transition: var(--transition);
 }
 
 .brochure-card:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 8px 32px rgba(26, 31, 37, 0.08);
-  transform: translateY(-2px);
+  border-color: var(--color-text);
 }
 
 .brochure-icon {
-  width: 44px;
-  height: 44px;
-  margin-bottom: 20px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: rgba(45, 138, 94, 0.1);
-  color: var(--color-accent);
+  border-radius: 6px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
 }
 
 .brochure-card h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 4px;
 }
 
 .brochure-card p {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   flex-grow: 1;
-  line-height: 1.6;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
 }
 
 .brochure-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-accent);
+  gap: 4px;
+  margin-top: 14px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -124,6 +131,7 @@
 .contact-section {
   background: var(--color-bg);
   position: relative;
+  padding: 56px 0;
 }
 
 .contact-section::before {
@@ -132,7 +140,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 64px);
+  width: calc(100% - 48px);
   max-width: var(--max-width);
   height: 1px;
   background: var(--color-border);
@@ -141,73 +149,74 @@
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 48px;
   align-items: start;
 }
 
 .contact-info h2 {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
 }
 
 .contact-info p {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.9375rem;
+  line-height: 1.6;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 20px;
+  gap: 12px;
+  padding: 16px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 6px;
   transition: var(--transition);
 }
 
 .contact-item:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 4px 16px rgba(26, 31, 37, 0.06);
+  border-color: var(--color-text);
 }
 
 .contact-icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: rgba(45, 138, 94, 0.1);
-  color: var(--color-accent);
+  border-radius: 6px;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
   flex-shrink: 0;
 }
 
 .contact-item span {
   display: block;
-  font-size: 0.625rem;
-  font-weight: 600;
-  color: var(--color-accent);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .contact-item a,
 .contact-item p {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: var(--color-text);
-  font-weight: 500;
+  font-weight: 450;
   line-height: 1.5;
 }
 
 .contact-item a:hover {
-  color: var(--color-accent);
+  color: var(--color-text);
+  opacity: 0.7;
 }
 
 /* Tablet */
@@ -218,86 +227,101 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .expertisen-hero {
-    padding: 104px 0 40px;
+    padding: 56px 0 32px;
   }
 
   .expertisen-hero h1 {
-    font-size: 2.125rem;
+    font-size: 1.5rem;
   }
 
-  .section {
-    padding: 72px 0;
+  .industries-section {
+    padding: 40px 0;
   }
 
   .section-title {
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
 
   .section-title span {
-    font-size: 0.6875rem;
-    margin-bottom: 10px;
+    font-size: 0.625rem;
+    margin-bottom: 8px;
   }
 
   .section-title h2 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .industries-grid {
     grid-template-columns: 1fr;
-    border-radius: 10px;
+    border-radius: 4px;
   }
 
   .industry-item {
-    padding: 18px 16px;
+    padding: 12px 14px;
   }
 
   .industry-name {
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .brochures-section {
+    padding: 40px 0;
   }
 
   .brochure-card {
-    padding: 28px 24px;
-  }
-
-  .brochure-icon {
-    margin-bottom: 18px;
-  }
-
-  .brochure-card h3 {
-    font-size: 1.0625rem;
-  }
-
-  .brochure-link {
-    margin-top: 18px;
-  }
-
-  .contact-info h2 {
-    font-size: 1.75rem;
-    margin-bottom: 16px;
-  }
-
-  .contact-info p {
-    font-size: 1rem;
-  }
-
-  .contact-item {
     padding: 20px 18px;
   }
 
+  .brochure-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+  }
+
+  .brochure-card h3 {
+    font-size: 0.875rem;
+  }
+
+  .brochure-card p {
+    font-size: 0.8125rem;
+  }
+
+  .brochure-link {
+    margin-top: 12px;
+    font-size: 0.625rem;
+  }
+
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .contact-info h2 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+  }
+
+  .contact-info p {
+    font-size: 0.875rem;
+  }
+
+  .contact-item {
+    padding: 14px;
+  }
+
   .contact-icon {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
   }
 
   .contact-item a,
   .contact-item p {
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
   }
 }

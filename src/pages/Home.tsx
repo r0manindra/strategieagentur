@@ -70,11 +70,11 @@ const Home = () => {
             </motion.div>
             <motion.div
               className="hero-visual"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Compass size={280} />
+              <Compass size={200} />
             </motion.div>
           </div>
         </div>
