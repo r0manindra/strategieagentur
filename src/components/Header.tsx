@@ -76,11 +76,6 @@ const Header = () => {
                   </NavLink>
                 </li>
               ))}
-              <li>
-                <a href="tel:+436991331411" className="btn btn-primary">
-                  Kontakt
-                </a>
-              </li>
             </ul>
           </motion.div>
         )}
