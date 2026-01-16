@@ -63,7 +63,7 @@ const Home = () => {
                 <a href="tel:+436991331411" className="btn btn-primary">
                   Gespräch vereinbaren
                 </a>
-                <a href="/expertisen" className="btn btn-outline">
+                <a href="#leistungen" className="btn btn-outline">
                   Mehr erfahren
                 </a>
               </motion.div>
@@ -78,10 +78,27 @@ const Home = () => {
             </motion.div>
           </div>
         </div>
+        <motion.div
+          className="scroll-hint"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          <svg width="20" height="32" viewBox="0 0 20 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="1" y="1" width="18" height="30" rx="9" />
+            <motion.circle
+              cx="10"
+              cy="10"
+              r="3"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </svg>
+        </motion.div>
       </section>
 
       {/* Services Section */}
-      <section className="section services-section">
+      <section id="leistungen" className="section services-section">
         <div className="container">
           <motion.div
             className="section-title"

@@ -58,9 +58,25 @@
   display: none;
 }
 
+.scroll-hint {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-text-secondary);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-hint:hover {
+  opacity: 0.8;
+}
+
 /* Services Section */
 .services-section {
   background: var(--color-bg);
+  scroll-margin-top: 72px;
   position: relative;
 }
 
@@ -317,6 +333,15 @@
   .hero-visual svg {
     width: 180px;
     height: 180px;
+  }
+
+  .scroll-hint {
+    bottom: 16px;
+  }
+
+  .scroll-hint svg {
+    width: 16px;
+    height: 26px;
   }
 
   .section {

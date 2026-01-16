@@ -156,9 +156,14 @@
 
 
 @media (max-width: 768px) {
-  .nav-links,
-  .nav-cta {
+  .nav-links {
     display: none;
+  }
+
+  .nav-cta {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    margin-right: 12px;
   }
 
   .menu-toggle {
