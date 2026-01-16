@@ -225,40 +225,79 @@
 /* Mobile */
 @media (max-width: 768px) {
   .expertisen-hero {
-    padding: 100px 0 32px;
+    padding: 104px 0 40px;
   }
 
   .expertisen-hero h1 {
-    font-size: 2rem;
+    font-size: 2.125rem;
   }
 
   .section {
-    padding: 64px 0;
+    padding: 72px 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section-title span {
+    font-size: 0.6875rem;
+    margin-bottom: 10px;
+  }
+
+  .section-title h2 {
+    font-size: 1.75rem;
   }
 
   .industries-grid {
     grid-template-columns: 1fr;
-    border-radius: 8px;
+    border-radius: 10px;
   }
 
   .industry-item {
-    padding: 16px 14px;
+    padding: 18px 16px;
   }
 
   .industry-name {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
   }
 
   .brochure-card {
-    padding: 24px 20px;
+    padding: 28px 24px;
+  }
+
+  .brochure-icon {
+    margin-bottom: 18px;
+  }
+
+  .brochure-card h3 {
+    font-size: 1.0625rem;
+  }
+
+  .brochure-link {
+    margin-top: 18px;
+  }
+
+  .contact-info h2 {
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
   }
 
   .contact-item {
-    padding: 16px;
+    padding: 20px 18px;
   }
 
   .contact-icon {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-item a,
+  .contact-item p {
+    font-size: 0.9375rem;
   }
 }

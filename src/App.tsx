@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Agentur from './pages/Agentur'
@@ -20,22 +21,31 @@ function App() {
 
   const handleIntroComplete = () => {
     sessionStorage.setItem('hasSeenIntro', 'true')
-    setIntroComplete(true)
+    setShowIntro(false)
+    setTimeout(() => setIntroComplete(true), 50)
   }
 
   return (
     <>
-      {showIntro && !introComplete && (
-        <IntroAnimation onComplete={handleIntroComplete} />
-      )}
+      <AnimatePresence mode="wait">
+        {showIntro && !introComplete && (
+          <IntroAnimation onComplete={handleIntroComplete} />
+        )}
+      </AnimatePresence>
       {introComplete && (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="agentur" element={<Agentur />} />
-            <Route path="expertisen" element={<Expertisen />} />
-          </Route>
-        </Routes>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
+        >
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="agentur" element={<Agentur />} />
+              <Route path="expertisen" element={<Expertisen />} />
+            </Route>
+          </Routes>
+        </motion.div>
       )}
     </>
   )

@@ -28,18 +28,23 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin-bottom: 20px;
+  padding: 6px 12px;
+  background: rgba(45, 138, 94, 0.08);
+  border-radius: 4px;
 }
 
 .hero h1 {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   color: var(--color-text);
+  letter-spacing: -0.025em;
 }
 
 .hero p {
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.7;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   color: var(--color-text-secondary);
+  max-width: 480px;
 }
 
 .hero-cta {
@@ -140,11 +145,20 @@
 
 .philosophy-content blockquote {
   position: relative;
-  padding: 0;
+  padding: 32px 0;
 }
 
 .philosophy-content blockquote::before {
-  display: none;
+  content: '"';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  color: var(--color-accent);
+  opacity: 0.15;
+  font-family: Georgia, serif;
+  line-height: 1;
 }
 
 .philosophy-content blockquote p {
@@ -296,32 +310,36 @@
   }
 
   .hero-content {
-    padding: 24px 0;
-    gap: 24px;
+    padding: 32px 0;
+    gap: 32px;
   }
 
   .hero-label {
     font-size: 0.6875rem;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
   }
 
   .hero h1 {
-    font-size: 1.75rem;
-    margin-bottom: 12px;
+    font-size: 1.875rem;
+    margin-bottom: 16px;
+    line-height: 1.15;
   }
 
   .hero p {
-    font-size: 0.9375rem;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 28px;
+    line-height: 1.6;
   }
 
   .hero-cta {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .hero-cta .btn {
     width: 100%;
+    padding: 16px 24px;
+    font-size: 1rem;
   }
 
   .hero-visual {
@@ -331,12 +349,12 @@
   }
 
   .hero-visual svg {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 
   .scroll-hint {
-    bottom: 16px;
+    bottom: 20px;
   }
 
   .scroll-hint svg {
@@ -345,19 +363,38 @@
   }
 
   .section {
-    padding: 64px 0;
+    padding: 72px 0;
   }
 
   .section-title {
     margin-bottom: 40px;
   }
 
+  .section-title span {
+    font-size: 0.6875rem;
+    margin-bottom: 10px;
+  }
+
+  .section-title h2 {
+    font-size: 1.75rem;
+  }
+
   .service-card {
-    padding: 24px 20px;
+    padding: 28px 24px;
+  }
+
+  .service-number {
+    margin-bottom: 14px;
   }
 
   .service-card h3 {
-    font-size: 1rem;
+    font-size: 1.0625rem;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
   }
 
   .philosophy-content {
@@ -365,30 +402,47 @@
   }
 
   .philosophy-content blockquote p {
-    font-size: 1.125rem;
-    line-height: 1.55;
+    font-size: 1.1875rem;
+    line-height: 1.5;
   }
 
   .value-item {
-    padding: 20px 12px;
+    padding: 24px 16px;
   }
 
   .value-icon {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
   }
 
   .value-item h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .value-item p {
     font-size: 0.9375rem;
   }
 
   .cta-content {
-    padding: 24px 0;
+    padding: 32px 0;
+  }
+
+  .cta-content span {
+    margin-bottom: 10px;
+  }
+
+  .cta-content h2 {
+    margin-bottom: 12px;
+  }
+
+  .cta-content .cta-subtitle {
+    margin-bottom: 32px;
   }
 
   .cta-phone {
     font-size: 1.0625rem;
-    padding: 14px 24px;
+    padding: 18px 28px;
     width: 100%;
     justify-content: center;
   }

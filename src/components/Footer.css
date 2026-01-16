@@ -111,12 +111,50 @@
 
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand {
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-tagline {
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .footer-contact,
+  .footer-links {
+    text-align: center;
+  }
+
+  .footer-contact h4,
+  .footer-links h4 {
+    margin-bottom: 20px;
+  }
+
+  .footer-contact address {
+    line-height: 2;
+  }
+
+  .footer-links li {
+    margin-bottom: 16px;
   }
 
   .footer-bottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
     text-align: center;
+    padding-top: 28px;
+  }
+
+  .footer-legal {
+    gap: 24px;
   }
 }
