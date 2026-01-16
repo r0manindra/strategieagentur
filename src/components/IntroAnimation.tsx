@@ -32,7 +32,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
       transition: {
         delay: i * 0.04,
         duration: 0.4,
-        ease: [0.2, 0.65, 0.3, 0.9]
+        ease: [0.2, 0.65, 0.3, 0.9] as const
       }
     })
   }
@@ -45,7 +45,7 @@ const IntroAnimation = ({ onComplete }: IntroAnimationProps) => {
       transition: {
         delay: 0.8,
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   }
