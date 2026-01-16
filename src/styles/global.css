@@ -1,13 +1,13 @@
 :root {
-  --color-bg: #fafafa;
-  --color-bg-secondary: #ffffff;
-  --color-text: #1a1a2e;
-  --color-text-secondary: #4a4a68;
-  --color-accent: #6c63ff;
-  --color-accent-light: #8b85ff;
-  --color-border: #e8e8ed;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #fafafa;
+  --color-text: #000000;
+  --color-text-secondary: #666666;
+  --color-accent: #000000;
+  --color-accent-light: #333333;
+  --color-border: #e5e5e5;
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --max-width: 1200px;
+  --max-width: 1100px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -25,7 +25,7 @@ body {
   font-family: var(--font-family);
   background-color: var(--color-bg);
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -37,7 +37,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent);
+  opacity: 0.7;
 }
 
 img {
@@ -52,42 +52,46 @@ img {
   padding: 0 24px;
 }
 
-/* Typography */
+/* Typography - Clean and minimal */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
 }
 
 h3 {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
 }
 
 p {
   color: var(--color-text-secondary);
 }
 
-/* Buttons */
+/* Buttons - Minimal and elegant */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 16px 32px;
-  font-size: 1rem;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 0.9375rem;
   font-weight: 500;
   border: none;
-  border-radius: 8px;
+  border-radius: 100px;
   cursor: pointer;
   transition: var(--transition);
+  letter-spacing: 0.01em;
 }
 
 .btn-primary {
@@ -96,14 +100,13 @@ p {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(108, 99, 255, 0.3);
+  background-color: #333;
+  transform: scale(1.02);
 }
 
 .btn-outline {
   background-color: transparent;
-  border: 2px solid var(--color-text);
+  border: 1.5px solid var(--color-text);
   color: var(--color-text);
 }
 
@@ -112,30 +115,30 @@ p {
   color: white;
 }
 
-/* Sections */
+/* Sections - Generous whitespace */
 .section {
-  padding: 100px 0;
+  padding: 140px 0;
 }
 
 .section-title {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   text-align: center;
 }
 
 .section-title span {
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 12px;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
 }
 
 /* Grid */
 .grid {
   display: grid;
-  gap: 32px;
+  gap: 40px;
 }
 
 .grid-2 {
@@ -164,30 +167,28 @@ p {
   }
 
   .section {
-    padding: 60px 0;
+    padding: 80px 0;
   }
 }
 
-/* Cards */
+/* Cards - Simple and clean */
 .card {
-  background: var(--color-bg-secondary);
-  border-radius: 16px;
-  padding: 32px;
+  background: var(--color-bg);
+  border-radius: 0;
+  padding: 40px;
   border: 1px solid var(--color-border);
   transition: var(--transition);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(26, 26, 46, 0.08);
-  border-color: var(--color-accent);
+  border-color: var(--color-text);
 }
 
 /* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -196,7 +197,7 @@ p {
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .delay-1 { animation-delay: 0.1s; }

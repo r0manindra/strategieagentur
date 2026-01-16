@@ -1,7 +1,7 @@
 /* Hero Section */
 .agentur-hero {
-  padding: 120px 0 60px;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+  padding: 160px 0 80px;
+  background: var(--color-bg);
 }
 
 .agentur-hero-content {
@@ -10,12 +10,12 @@
 
 .page-label {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
 }
 
 .agentur-hero h1 {
@@ -24,13 +24,14 @@
 
 /* Founder Section */
 .founder-section {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .founder-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 100px;
   align-items: start;
 }
 
@@ -39,28 +40,28 @@
   top: 120px;
 }
 
-.founder-placeholder {
+.founder-photo {
   width: 100%;
-  aspect-ratio: 1;
-  max-width: 300px;
-  background: var(--color-bg);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  margin-bottom: 24px;
+  max-width: 360px;
+  border-radius: 0;
+  margin-bottom: 32px;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.founder-photo:hover {
+  filter: grayscale(0%);
 }
 
 .founder-info h3 {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
 }
 
 .founder-info span {
-  font-size: 0.9375rem;
-  color: var(--color-accent);
-  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 400;
 }
 
 .founder-content {
@@ -68,23 +69,24 @@
 }
 
 .lead-text {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 500;
   color: var(--color-text);
-  line-height: 1.5;
-  margin-bottom: 32px;
+  line-height: 1.4;
+  margin-bottom: 48px;
+  letter-spacing: -0.02em;
 }
 
 .founder-content blockquote {
   position: relative;
   padding-left: 32px;
-  margin: 40px 0;
-  border-left: 3px solid var(--color-accent);
+  margin: 56px 0;
+  border-left: 2px solid var(--color-text);
 }
 
 .founder-content blockquote p {
   font-size: 1.25rem;
-  font-style: italic;
+  font-style: normal;
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
@@ -98,59 +100,66 @@
 /* Philosophy Cards Section */
 .philosophy-cards-section {
   background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .philosophy-card {
   text-align: center;
-  padding: 48px 32px;
+  padding: 56px 40px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.philosophy-card:hover {
+  border-color: var(--color-text);
 }
 
 .card-icon {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 24px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 32px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(108, 99, 255, 0.05) 100%);
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .philosophy-card h3 {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .philosophy-card p {
   font-size: 0.9375rem;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 /* CTA Section */
 .agentur-cta {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .cta-box {
-  background: linear-gradient(135deg, var(--color-text) 0%, #2d2d4a 100%);
-  border-radius: 24px;
-  padding: 80px 60px;
+  background: var(--color-text);
+  border-radius: 0;
+  padding: 100px 80px;
   text-align: center;
 }
 
 .cta-box h2 {
   color: white;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  font-weight: 500;
 }
 
 .cta-box .cta-phone {
   display: inline-block;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 500;
   color: white;
-  padding: 16px 40px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
+  padding: 20px 48px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
   transition: var(--transition);
 }
 
@@ -164,7 +173,7 @@
 @media (max-width: 1024px) {
   .founder-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 
   .founder-image {
@@ -172,18 +181,22 @@
     text-align: center;
   }
 
-  .founder-placeholder {
-    margin: 0 auto 24px;
+  .founder-photo {
+    margin: 0 auto 32px;
+  }
+
+  .founder-info {
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
   .agentur-hero {
-    padding: 80px 0 40px;
+    padding: 120px 0 60px;
   }
 
   .lead-text {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
   }
 
   .founder-content blockquote p {
@@ -191,11 +204,11 @@
   }
 
   .cta-box {
-    padding: 48px 24px;
+    padding: 60px 32px;
   }
 
   .cta-box .cta-phone {
-    font-size: 1.5rem;
-    padding: 12px 24px;
+    font-size: 1.25rem;
+    padding: 16px 32px;
   }
 }

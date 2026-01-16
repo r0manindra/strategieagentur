@@ -1,7 +1,7 @@
 /* Hero Section */
 .expertisen-hero {
-  padding: 120px 0 60px;
-  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
+  padding: 160px 0 80px;
+  background: var(--color-bg);
 }
 
 .expertisen-hero-content {
@@ -10,7 +10,8 @@
 
 /* Industries Section */
 .industries-section {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .industries-grid {
@@ -19,7 +20,6 @@
   gap: 1px;
   background: var(--color-border);
   border: 1px solid var(--color-border);
-  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -27,20 +27,20 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 24px;
-  background: var(--color-bg-secondary);
+  padding: 28px 24px;
+  background: var(--color-bg);
   transition: var(--transition);
 }
 
 .industry-item:hover {
-  background: var(--color-bg);
+  background: var(--color-bg-secondary);
 }
 
 .industry-number {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  color: var(--color-accent);
-  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.1em;
 }
 
 .industry-name {
@@ -52,107 +52,114 @@
 /* Brochures Section */
 .brochures-section {
   background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .brochure-card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  padding: 48px 40px;
+  border: 1px solid var(--color-border);
+}
+
+.brochure-card:hover {
+  border-color: var(--color-text);
 }
 
 .brochure-icon {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 20px;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(108, 99, 255, 0.05) 100%);
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .brochure-card h3 {
   font-size: 1.125rem;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .brochure-card p {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   flex-grow: 1;
+  line-height: 1.7;
 }
 
 .brochure-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 20px;
-  font-size: 0.875rem;
+  margin-top: 28px;
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* Contact Section */
 .contact-section {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  gap: 100px;
+  align-items: start;
 }
 
 .contact-info h2 {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .contact-info p {
   font-size: 1.125rem;
+  line-height: 1.7;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  padding: 24px;
+  gap: 20px;
+  padding: 28px;
   background: var(--color-bg);
-  border-radius: 12px;
   border: 1px solid var(--color-border);
   transition: var(--transition);
 }
 
 .contact-item:hover {
-  border-color: var(--color-accent);
+  border-color: var(--color-text);
 }
 
 .contact-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.1) 0%, rgba(108, 99, 255, 0.05) 100%);
-  color: var(--color-accent);
+  color: var(--color-text);
   flex-shrink: 0;
 }
 
 .contact-item span {
   display: block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--color-accent);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 4px;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
 }
 
 .contact-item a,
@@ -160,11 +167,11 @@
   font-size: 1rem;
   color: var(--color-text);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .contact-item a:hover {
-  color: var(--color-accent);
+  opacity: 0.7;
 }
 
 /* Responsive */
@@ -175,13 +182,13 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 }
 
 @media (max-width: 768px) {
   .expertisen-hero {
-    padding: 80px 0 40px;
+    padding: 120px 0 60px;
   }
 
   .industries-grid {
@@ -189,6 +196,6 @@
   }
 
   .industry-item {
-    padding: 20px;
+    padding: 24px 20px;
   }
 }

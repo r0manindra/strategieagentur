@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(250, 250, 250, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -21,16 +21,18 @@
   align-items: center;
   gap: 12px;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--color-text);
+  letter-spacing: -0.01em;
 }
 
 .logo:hover {
   color: var(--color-text);
+  opacity: 1;
 }
 
 .logo-icon {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .logo:hover .logo-icon {
@@ -40,12 +42,12 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 48px;
   list-style: none;
 }
 
 .nav-link {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-text-secondary);
   position: relative;
@@ -58,14 +60,15 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--color-accent);
+  height: 1px;
+  background: var(--color-text);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-text);
+  opacity: 1;
 }
 
 .nav-link:hover::after,
@@ -74,8 +77,8 @@
 }
 
 .nav-cta {
-  padding: 12px 24px;
-  font-size: 0.875rem;
+  padding: 10px 24px;
+  font-size: 0.8125rem;
 }
 
 .menu-toggle {
@@ -94,14 +97,14 @@
 .menu-toggle span {
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1.5px;
   background: var(--color-text);
   transition: var(--transition);
   transform-origin: center;
 }
 
 .menu-toggle.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(6.5px) rotate(45deg);
 }
 
 .menu-toggle.active span:nth-child(2) {
@@ -109,7 +112,7 @@
 }
 
 .menu-toggle.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 .mobile-menu {
@@ -118,32 +121,33 @@
   top: 80px;
   left: 0;
   right: 0;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg);
   border-bottom: 1px solid var(--color-border);
-  padding: 24px;
+  padding: 32px 24px;
 }
 
 .mobile-menu ul {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .mobile-menu a {
   display: block;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 12px 0;
+  padding: 16px 0;
   color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mobile-menu a.active {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .mobile-menu .btn {
-  margin-top: 16px;
+  margin-top: 24px;
   width: 100%;
   text-align: center;
 }
