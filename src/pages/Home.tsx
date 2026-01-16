@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 import Compass from '../components/Compass'
+import GuillochePattern from '../components/GuillochePattern'
+import '../components/GuillochePattern.css'
 import './Home.css'
 
 const services = [
@@ -41,6 +43,7 @@ const Home = () => {
     <>
       {/* Hero Section */}
       <section className="hero">
+        <GuillochePattern variant="hero" />
         <div className="container">
           <div className="hero-content">
             <motion.div
@@ -49,11 +52,14 @@ const Home = () => {
               animate="visible"
               variants={staggerContainer}
             >
-              <motion.span className="hero-label" variants={fadeInUp}>
-                Strategische Beratung
-              </motion.span>
+              <motion.div className="hero-label-wrapper" variants={fadeInUp}>
+                <span className="hero-label-line" />
+                <span className="hero-label">Strategische Beratung</span>
+                <span className="hero-label-line" />
+              </motion.div>
               <motion.h1 variants={fadeInUp}>
-                Ihre Zukunft. Strategisch gesichert.
+                Ihre Zukunft.<br />
+                <span className="text-display-italic">Strategisch</span> gesichert.
               </motion.h1>
               <motion.p variants={fadeInUp}>
                 Wir entwickeln mit Ihnen maßgeschneiderte Strategien für Finanzierung,
@@ -70,31 +76,16 @@ const Home = () => {
             </motion.div>
             <motion.div
               className="hero-visual"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
             >
-              <Compass size={200} />
+              <div className="compass-frame">
+                <Compass size={220} />
+              </div>
             </motion.div>
           </div>
         </div>
-        <motion.div
-          className="scroll-hint"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-        >
-          <svg width="20" height="32" viewBox="0 0 20 32" fill="none" stroke="currentColor" strokeWidth="1.5">
-            <rect x="1" y="1" width="18" height="30" rx="9" />
-            <motion.circle
-              cx="10"
-              cy="10"
-              r="3"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </svg>
-        </motion.div>
       </section>
 
       {/* Services Section */}
@@ -136,6 +127,7 @@ const Home = () => {
       {/* Philosophy Section */}
       <section className="section philosophy-section">
         <div className="container">
+          <GuillochePattern variant="section" />
           <motion.div
             className="philosophy-content"
             initial={{ opacity: 0, y: 24 }}
@@ -144,10 +136,10 @@ const Home = () => {
             transition={{ duration: 0.5 }}
           >
             <blockquote>
-              <p>
-                Der richtige Zeitpunkt, das richtige Produkt,
+              <p className="text-display-italic">
+                „Der richtige Zeitpunkt, das richtige Produkt,
                 die richtige Positionierung — das ist kein Zufall,
-                sondern Strategie.
+                sondern Strategie."
               </p>
             </blockquote>
           </motion.div>

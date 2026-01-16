@@ -1,0 +1,45 @@
+.guilloche-pattern {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  color: var(--color-accent);
+}
+
+.guilloche-hero {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60%;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.guilloche-hero .guilloche-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.guilloche-divider {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 40px;
+  margin: 0 auto;
+  color: var(--color-accent);
+}
+
+.guilloche-card {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .guilloche-hero {
+    width: 100%;
+    opacity: 0.4;
+  }
+}

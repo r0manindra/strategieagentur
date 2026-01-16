@@ -9,54 +9,73 @@
   background: var(--color-bg);
 }
 
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-content {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
 }
 
 .hero-text {
-  max-width: 480px;
+  max-width: 520px;
+}
+
+/* Refined label with decorative lines */
+.hero-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hero-label-line {
+  flex: 0 0 24px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
 }
 
 .hero-label {
-  display: inline-block;
   font-size: 0.6875rem;
   font-weight: 500;
   color: var(--color-accent);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 16px;
-  padding: 0;
-  background: transparent;
-  border-radius: 0;
+  letter-spacing: 0.25em;
 }
 
 .hero h1 {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   color: var(--color-text);
-  letter-spacing: -0.03em;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  line-height: 1.08;
+}
+
+.hero h1 .text-display-italic {
+  font-style: italic;
+  color: var(--color-accent);
 }
 
 .hero p {
   font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 28px;
+  line-height: 1.65;
+  margin-bottom: 32px;
   color: var(--color-text-secondary);
   max-width: 420px;
 }
 
 .hero-cta {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .hero-cta .btn {
-  padding: 12px 24px;
+  padding: 14px 28px;
   font-size: 0.875rem;
 }
 
@@ -66,51 +85,126 @@
   align-items: center;
 }
 
-.hero-gradient {
-  display: none;
+/* Compass frame - certificate/seal style */
+.compass-frame {
+  position: relative;
+  padding: 24px;
 }
 
-.scroll-hint {
-  display: none;
+.compass-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.compass-frame::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  opacity: 0.15;
 }
 
 /* Services Section */
 .services-section {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-cream);
   scroll-margin-top: 64px;
   position: relative;
-  padding: 80px 0;
+  padding: 88px 0;
+}
+
+/* Decorative top border - certificate style */
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 80px);
+  max-width: 900px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-border) 15%,
+    var(--color-accent) 50%,
+    var(--color-border) 85%,
+    transparent
+  );
+  opacity: 0.5;
 }
 
 .service-card {
   position: relative;
-  padding: 28px 24px;
+  padding: 32px 28px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 2px;
   transition: var(--transition);
+  overflow: hidden;
+}
+
+/* Corner ornaments - subtle banking detail */
+.service-card::before,
+.service-card::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-accent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.service-card::before {
+  top: 8px;
+  left: 8px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.service-card::after {
+  bottom: 8px;
+  right: 8px;
+  border-left: none;
+  border-top: none;
+}
+
+.service-card:hover::before,
+.service-card:hover::after {
+  opacity: 0.3;
 }
 
 .service-card:hover {
   border-color: var(--color-accent);
-  box-shadow: 0 4px 20px rgba(26, 77, 46, 0.08);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(26, 77, 46, 0.08);
+  transform: translateY(-2px);
 }
 
 .service-number {
-  font-size: 0.625rem;
+  font-size: 0.5625rem;
   font-weight: 600;
-  color: var(--color-accent);
-  letter-spacing: 0.1em;
-  margin-bottom: 14px;
+  color: var(--color-gold-dark);
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
   display: block;
-  opacity: 0.7;
+  font-family: var(--font-family);
 }
 
 .service-card h3 {
-  margin-bottom: 8px;
-  font-size: 0.9375rem;
-  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-display);
 }
 
 .service-card p {
@@ -122,66 +216,114 @@
 /* Philosophy Section */
 .philosophy-section {
   background: var(--color-bg);
-  padding: 72px 0;
+  padding: 80px 0;
+  position: relative;
 }
 
 .philosophy-content {
-  max-width: 640px;
-  margin: 0 auto 48px;
+  max-width: 700px;
+  margin: 32px auto 56px;
   text-align: center;
 }
 
 .philosophy-content blockquote {
   position: relative;
-  padding: 0;
+  padding: 32px 0;
+}
+
+/* Decorative quote marks - engraved style */
+.philosophy-content blockquote::before,
+.philosophy-content blockquote::after {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-accent);
+  opacity: 0.15;
+  position: absolute;
+  line-height: 1;
 }
 
 .philosophy-content blockquote::before {
-  display: none;
+  content: '"';
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .philosophy-content blockquote p {
-  font-size: 1.25rem;
+  font-size: 1.375rem;
   font-weight: 400;
   color: var(--color-text);
-  line-height: 1.6;
+  line-height: 1.55;
+  font-family: var(--font-display);
   font-style: italic;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 .values-grid {
   max-width: 800px;
   margin: 0 auto;
-  gap: 16px;
+  gap: 24px;
 }
 
 .value-item {
   text-align: center;
-  padding: 20px 12px;
+  padding: 24px 16px;
+  position: relative;
+}
+
+/* Subtle connecting lines */
+.value-item::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  width: 1px;
+  height: 40px;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, transparent, var(--color-border), transparent);
+}
+
+.value-item:last-child::after {
+  display: none;
 }
 
 .value-icon {
-  width: 40px;
-  height: 40px;
-  margin: 0 auto 12px;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  background: var(--color-accent-subtle);
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--color-accent);
   color: var(--color-accent);
+  position: relative;
+}
+
+/* Double ring effect */
+.value-icon::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
 }
 
 .value-item h4 {
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin-bottom: 6px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  margin-bottom: 8px;
   color: var(--color-text);
+  font-family: var(--font-display);
 }
 
 .value-item p {
   font-size: 0.8125rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--color-text-secondary);
 }
 
@@ -191,11 +333,33 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 64px 0;
+  padding: 72px 0;
 }
 
+/* Subtle guilloche-inspired pattern overlay */
 .cta-section::before {
-  display: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(26, 77, 46, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(26, 77, 46, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Top border ornament */
+.cta-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
 .cta-content {
@@ -208,66 +372,106 @@
   display: block;
   font-size: 0.6875rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-gold);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 10px;
+  letter-spacing: 0.25em;
+  margin-bottom: 12px;
 }
 
 .cta-content h2 {
   color: white;
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: var(--font-display);
 }
 
 .cta-content .cta-subtitle {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .cta-phone {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 1rem;
   font-weight: 500;
   color: white;
-  padding: 12px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
+  padding: 14px 28px;
+  border: 1px solid var(--color-gold);
+  border-radius: 2px;
   transition: var(--transition);
   background: transparent;
+  position: relative;
+}
+
+/* Corner accents */
+.cta-phone::before,
+.cta-phone::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--color-gold);
+  opacity: 0.5;
+  transition: var(--transition);
+}
+
+.cta-phone::before {
+  top: -4px;
+  left: -4px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cta-phone::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: none;
+  border-top: none;
 }
 
 .cta-phone:hover {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: white;
-  box-shadow: 0 4px 20px rgba(26, 77, 46, 0.4);
+  box-shadow: 0 4px 24px rgba(26, 77, 46, 0.4);
+}
+
+.cta-phone:hover::before,
+.cta-phone:hover::after {
+  border-color: var(--color-accent-light);
+  opacity: 0.8;
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
   .hero {
-    padding: 72px 0 56px;
+    padding: 80px 0 64px;
   }
 
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 32px;
+    gap: 40px;
   }
 
   .hero-text {
-    max-width: 480px;
+    max-width: 520px;
     margin: 0 auto;
     order: 1;
   }
 
+  .hero-label-wrapper {
+    justify-content: center;
+  }
+
   .hero p {
     max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-cta {
@@ -278,159 +482,224 @@
     order: 2;
   }
 
+  .compass-frame {
+    padding: 20px;
+  }
+
   .philosophy-content blockquote p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
+  }
+
+  .value-item::after {
+    display: none;
   }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
   .hero {
-    padding: 48px 0 40px;
+    padding: 56px 0 48px;
   }
 
   .hero-content {
-    gap: 24px;
+    gap: 32px;
+  }
+
+  .hero-label-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .hero-label-line {
+    flex: 0 0 16px;
   }
 
   .hero-label {
-    font-size: 0.625rem;
-    margin-bottom: 12px;
+    font-size: 0.5625rem;
+    letter-spacing: 0.2em;
   }
 
   .hero h1 {
-    font-size: 1.625rem;
-    margin-bottom: 12px;
-    line-height: 1.15;
+    font-size: 1.875rem;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .hero h1 br {
+    display: none;
   }
 
   .hero p {
     font-size: 0.9375rem;
-    margin-bottom: 20px;
-    line-height: 1.55;
+    margin-bottom: 24px;
+    line-height: 1.6;
   }
 
   .hero-cta {
     flex-direction: row;
-    gap: 8px;
+    gap: 10px;
   }
 
   .hero-cta .btn {
-    padding: 10px 16px;
+    padding: 12px 20px;
     font-size: 0.8125rem;
   }
 
-  .hero-visual svg {
-    width: 140px;
-    height: 140px;
+  .compass-frame {
+    padding: 16px;
+  }
+
+  .compass-frame svg {
+    width: 160px;
+    height: 160px;
   }
 
   .services-section {
-    padding: 56px 0;
+    padding: 64px 0;
+  }
+
+  .services-section::before {
+    width: calc(100% - 40px);
   }
 
   .section-title {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
   }
 
   .section-title span {
-    font-size: 0.625rem;
+    font-size: 0.5625rem;
     margin-bottom: 8px;
   }
 
   .section-title h2 {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
   }
 
   .service-card {
-    padding: 20px 18px;
+    padding: 24px 20px;
+  }
+
+  .service-card::before,
+  .service-card::after {
+    width: 16px;
+    height: 16px;
   }
 
   .service-number {
-    margin-bottom: 10px;
-    font-size: 0.5625rem;
+    margin-bottom: 12px;
+    font-size: 0.5rem;
   }
 
   .service-card h3 {
-    font-size: 0.875rem;
-    margin-bottom: 6px;
+    font-size: 0.9375rem;
+    margin-bottom: 8px;
   }
 
   .service-card p {
     font-size: 0.8125rem;
-    line-height: 1.5;
-  }
-
-  .philosophy-section {
-    padding: 48px 0;
-  }
-
-  .philosophy-content {
-    margin-bottom: 32px;
-  }
-
-  .philosophy-content blockquote p {
-    font-size: 1rem;
     line-height: 1.55;
   }
 
+  .philosophy-section {
+    padding: 56px 0;
+  }
+
+  .philosophy-content {
+    margin: 24px auto 40px;
+  }
+
+  .philosophy-content blockquote {
+    padding: 24px 0;
+  }
+
+  .philosophy-content blockquote::before {
+    font-size: 2rem;
+  }
+
+  .philosophy-content blockquote p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
   .values-grid {
-    gap: 8px;
+    gap: 16px;
   }
 
   .value-item {
-    padding: 16px 8px;
+    padding: 20px 12px;
   }
 
   .value-icon {
-    width: 36px;
-    height: 36px;
-    margin-bottom: 10px;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+  }
+
+  .value-icon::before {
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
   }
 
   .value-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
 
   .value-item h4 {
-    font-size: 0.8125rem;
-    margin-bottom: 4px;
+    font-size: 0.875rem;
+    margin-bottom: 6px;
   }
 
   .value-item p {
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
   }
 
   .cta-section {
-    padding: 48px 0;
+    padding: 56px 0;
   }
 
   .cta-content span {
-    font-size: 0.625rem;
-    margin-bottom: 8px;
+    font-size: 0.5625rem;
+    margin-bottom: 10px;
   }
 
   .cta-content h2 {
-    font-size: 1.125rem;
-    margin-bottom: 4px;
+    font-size: 1.375rem;
+    margin-bottom: 6px;
   }
 
   .cta-content .cta-subtitle {
     font-size: 0.875rem;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .cta-phone {
     font-size: 0.9375rem;
-    padding: 10px 20px;
+    padding: 12px 24px;
+  }
+
+  .cta-phone::before,
+  .cta-phone::after {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cta-phone::before {
+    top: -3px;
+    left: -3px;
+  }
+
+  .cta-phone::after {
+    bottom: -3px;
+    right: -3px;
   }
 }
 
 /* Small Mobile */
 @media (max-width: 380px) {
   .hero h1 {
-    font-size: 1.375rem;
+    font-size: 1.625rem;
   }
 
   .hero-cta {
@@ -441,8 +710,8 @@
     width: 100%;
   }
 
-  .hero-visual svg {
-    width: 120px;
-    height: 120px;
+  .compass-frame svg {
+    width: 140px;
+    height: 140px;
   }
 }
