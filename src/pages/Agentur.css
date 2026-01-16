@@ -1,7 +1,7 @@
 /* Hero Section */
 .agentur-hero {
-  padding: 160px 0 80px;
-  background: var(--color-bg);
+  padding: 120px 0 48px;
+  background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg) 100%);
 }
 
 .agentur-hero-content {
@@ -11,11 +11,11 @@
 .page-label {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-weight: 600;
+  color: var(--color-accent);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-bottom: 20px;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
 }
 
 .agentur-hero h1 {
@@ -25,28 +25,40 @@
 /* Founder Section */
 .founder-section {
   background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  position: relative;
+}
+
+.founder-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 64px);
+  max-width: var(--max-width);
+  height: 1px;
+  background: var(--color-border);
 }
 
 .founder-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 100px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 64px;
   align-items: start;
 }
 
 .founder-image {
   position: sticky;
-  top: 120px;
+  top: 100px;
 }
 
 .founder-photo {
   width: 100%;
-  max-width: 360px;
-  border-radius: 0;
-  margin-bottom: 32px;
-  filter: grayscale(100%);
-  transition: filter 0.5s ease;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  filter: grayscale(20%);
+  transition: filter 0.4s ease;
 }
 
 .founder-photo:hover {
@@ -54,126 +66,172 @@
 }
 
 .founder-info h3 {
-  margin-bottom: 8px;
-  font-size: 1.25rem;
+  margin-bottom: 4px;
+  font-size: 1.125rem;
 }
 
 .founder-info span {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  font-weight: 400;
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  font-weight: 500;
 }
 
 .founder-content {
-  padding-top: 20px;
+  padding-top: 4px;
 }
 
 .lead-text {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-text);
-  line-height: 1.4;
-  margin-bottom: 48px;
-  letter-spacing: -0.02em;
+  line-height: 1.45;
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
 }
 
 .founder-content blockquote {
   position: relative;
-  padding-left: 32px;
-  margin: 56px 0;
-  border-left: 2px solid var(--color-text);
+  padding-left: 24px;
+  margin: 40px 0;
+  border-left: 3px solid var(--color-accent);
 }
 
 .founder-content blockquote p {
-  font-size: 1.25rem;
-  font-style: normal;
+  font-size: 1.0625rem;
+  font-style: italic;
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
 .founder-content > p:last-of-type {
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   color: var(--color-text);
   font-weight: 500;
 }
 
 /* Philosophy Cards Section */
 .philosophy-cards-section {
-  background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-secondary);
 }
 
 .philosophy-card {
   text-align: center;
-  padding: 56px 40px;
+  padding: 40px 28px;
   border: 1px solid var(--color-border);
+  border-radius: 12px;
   background: var(--color-bg);
+  transition: var(--transition);
 }
 
 .philosophy-card:hover {
-  border-color: var(--color-text);
+  border-color: var(--color-accent);
+  box-shadow: 0 8px 32px rgba(26, 31, 37, 0.08);
+  transform: translateY(-2px);
 }
 
 .card-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 32px;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text);
+  border-radius: 12px;
+  background: rgba(45, 138, 94, 0.1);
+  color: var(--color-accent);
 }
 
 .philosophy-card h3 {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  font-size: 1.0625rem;
 }
 
 .philosophy-card p {
-  font-size: 0.9375rem;
-  line-height: 1.8;
+  font-size: 0.875rem;
+  line-height: 1.65;
 }
 
 /* CTA Section */
 .agentur-cta {
   background: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  position: relative;
+}
+
+.agentur-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 64px);
+  max-width: var(--max-width);
+  height: 1px;
+  background: var(--color-border);
 }
 
 .cta-box {
-  background: var(--color-text);
-  border-radius: 0;
-  padding: 100px 80px;
+  background: var(--color-bg-dark);
+  border-radius: 16px;
+  padding: 64px 48px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(45, 138, 94, 0.12) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .cta-box h2 {
   color: white;
-  margin-bottom: 40px;
-  font-weight: 500;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  position: relative;
+}
+
+.cta-box .cta-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9375rem;
+  margin-bottom: 28px;
+  position: relative;
 }
 
 .cta-box .cta-phone {
-  display: inline-block;
-  font-size: 1.75rem;
-  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.125rem;
+  font-weight: 600;
   color: white;
-  padding: 20px 48px;
+  padding: 16px 32px;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
+  border-radius: 10px;
   transition: var(--transition);
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
 }
 
 .cta-box .cta-phone:hover {
-  background: white;
-  color: var(--color-text);
-  border-color: white;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(45, 138, 94, 0.3);
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
   .founder-grid {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
   }
 
   .founder-image {
@@ -182,33 +240,69 @@
   }
 
   .founder-photo {
-    margin: 0 auto 32px;
+    margin: 0 auto 20px;
+    max-width: 260px;
   }
 
   .founder-info {
     text-align: center;
   }
-}
-
-@media (max-width: 768px) {
-  .agentur-hero {
-    padding: 120px 0 60px;
-  }
 
   .lead-text {
     font-size: 1.375rem;
   }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .agentur-hero {
+    padding: 100px 0 32px;
+  }
+
+  .agentur-hero h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .founder-photo {
+    max-width: 220px;
+  }
+
+  .lead-text {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+  }
+
+  .founder-content blockquote {
+    margin: 28px 0;
+    padding-left: 20px;
+  }
 
   .founder-content blockquote p {
-    font-size: 1.125rem;
+    font-size: 0.9375rem;
+  }
+
+  .philosophy-card {
+    padding: 32px 24px;
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
   }
 
   .cta-box {
-    padding: 60px 32px;
+    padding: 48px 24px;
+    border-radius: 12px;
   }
 
   .cta-box .cta-phone {
-    font-size: 1.25rem;
-    padding: 16px 32px;
+    font-size: 1rem;
+    padding: 14px 24px;
+    width: 100%;
+    justify-content: center;
   }
 }

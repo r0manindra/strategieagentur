@@ -19,93 +19,89 @@ const Compass = ({ size = 300 }: CompassProps) => {
           strokeWidth="1"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
         />
 
-        {/* Inner ring */}
+        {/* Middle ring with tick marks */}
         <motion.circle
           cx="100"
           cy="100"
-          r="80"
+          r="75"
           fill="none"
           stroke="var(--color-border)"
           strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, delay: 0.3, ease: "easeInOut" }}
+          strokeDasharray="4 8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
         />
 
-        {/* Direction markers */}
+        {/* Cardinal direction lines */}
         {[0, 90, 180, 270].map((angle, i) => (
           <motion.line
             key={angle}
             x1="100"
-            y1={angle === 0 ? "10" : angle === 180 ? "190" : "100"}
+            y1={angle === 0 || angle === 180 ? (angle === 0 ? "15" : "185") : "100"}
             x2="100"
-            y2={angle === 0 ? "25" : angle === 180 ? "175" : "100"}
+            y2={angle === 0 || angle === 180 ? (angle === 0 ? "30" : "170") : "100"}
             stroke="var(--color-text-secondary)"
-            strokeWidth="2"
-            transform={`rotate(${angle} 100 100)`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 + i * 0.1 }}
-            style={{
-              transformOrigin: 'center',
-              ...(angle === 90 || angle === 270 ? {
-                x1: angle === 90 ? 190 : 10,
-                y1: 100,
-                x2: angle === 90 ? 175 : 25,
-                y2: 100
-              } : {})
-            }}
+            strokeWidth="1.5"
+            transform={angle === 90 || angle === 270 ? `rotate(${angle} 100 100)` : undefined}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
+            style={angle === 90 || angle === 270 ? {
+              transformOrigin: 'center'
+            } : undefined}
           />
         ))}
 
-        {/* Success label */}
+        {/* Success/North label */}
         <motion.text
           x="100"
-          y="40"
+          y="48"
           textAnchor="middle"
           fill="var(--color-accent)"
-          fontSize="10"
+          fontSize="9"
           fontWeight="600"
-          letterSpacing="0.1em"
+          letterSpacing="0.15em"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.5 }}
+          transition={{ duration: 0.5, delay: 1.2 }}
         >
           ERFOLG
         </motion.text>
 
         {/* Compass needle group */}
         <motion.g
-          initial={{ rotate: -45 }}
+          initial={{ rotate: -30 }}
           animate={{ rotate: 0 }}
           transition={{
-            duration: 2,
-            delay: 0.5,
+            duration: 1.8,
+            delay: 0.3,
             type: "spring",
-            stiffness: 30,
-            damping: 10
+            stiffness: 40,
+            damping: 12
           }}
           style={{ transformOrigin: '100px 100px' }}
         >
-          {/* North needle (pointing to success) */}
+          {/* North needle (pointing to success) - Green accent */}
           <motion.polygon
-            points="100,30 108,100 100,110 92,100"
+            points="100,35 106,100 100,108 94,100"
             fill="var(--color-accent)"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
           />
 
-          {/* South needle */}
+          {/* South needle - Dark grey */}
           <motion.polygon
-            points="100,170 108,100 100,90 92,100"
+            points="100,165 106,100 100,92 94,100"
             fill="var(--color-text)"
+            opacity="0.3"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
           />
         </motion.g>
 
@@ -113,43 +109,40 @@ const Compass = ({ size = 300 }: CompassProps) => {
         <motion.circle
           cx="100"
           cy="100"
-          r="12"
+          r="10"
           fill="var(--color-bg)"
           stroke="var(--color-text)"
-          strokeWidth="3"
+          strokeWidth="2"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
+          transition={{ duration: 0.4, delay: 0.8 }}
         />
 
-        {/* Decorative dots */}
+        {/* Inner center dot */}
+        <motion.circle
+          cx="100"
+          cy="100"
+          r="3"
+          fill="var(--color-accent)"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.3, delay: 1 }}
+        />
+
+        {/* Decorative dots at intercardinal points */}
         {[45, 135, 225, 315].map((angle, i) => (
           <motion.circle
             key={angle}
-            cx={100 + 70 * Math.cos((angle * Math.PI) / 180)}
-            cy={100 + 70 * Math.sin((angle * Math.PI) / 180)}
-            r="3"
+            cx={100 + 65 * Math.cos((angle * Math.PI) / 180)}
+            cy={100 + 65 * Math.sin((angle * Math.PI) / 180)}
+            r="2"
             fill="var(--color-border)"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ duration: 0.3, delay: 1.2 + i * 0.1 }}
+            transition={{ duration: 0.3, delay: 1.1 + i * 0.08 }}
           />
         ))}
       </svg>
-
-      {/* Pulsing glow effect */}
-      <motion.div
-        className="compass-glow"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
     </div>
   )
 }

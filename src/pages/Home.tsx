@@ -4,25 +4,25 @@ import './Home.css'
 
 const services = [
   {
-    title: 'Finanzierungen & Förderungen',
-    description: 'Solide Finanzierungsmodelle mit strukturierter Finanzierung. Integration von Förderungen. Investitionsmanagement in einer stabilen Finanzumgebung.'
+    title: 'Finanzierung & Förderung',
+    description: 'Maßgeschneiderte Finanzierungsmodelle mit optimaler Förderungsintegration.'
   },
   {
-    title: 'Liquidität & Kapitalaufbau',
-    description: 'Sicherung der Liquidität für das Tagesgeschäft. Steuer- und ertragsoptimierter Kapitalaufbau. Gewinnfreibetrag & Vorsorgemanagement.'
+    title: 'Liquidität & Kapital',
+    description: 'Nachhaltige Sicherung Ihrer Liquidität und steueroptimierter Vermögensaufbau.'
   },
   {
-    title: 'Betriebsnachfolge & Beteiligungen',
-    description: 'Professionell vorbereitete und realisierte Betriebsnachfolge oder Übernahme. Strategisches Beteiligungs-Management. Unternehmensverkauf.'
+    title: 'Nachfolge & Beteiligung',
+    description: 'Professionelle Begleitung bei Übergaben, Übernahmen und strategischen Beteiligungen.'
   },
   {
-    title: 'Wachstum & Innovationen',
-    description: 'Wachstum durch Innovationsmanagement. Schärfung der Positionierung und Marktkommunikation. Nutzung von Synergien und Umwegrentabilitäten.'
+    title: 'Wachstum & Innovation',
+    description: 'Gezielte Marktpositionierung und Innovationsstrategien für nachhaltiges Wachstum.'
   }
 ]
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0 }
 }
 
@@ -50,22 +50,18 @@ const Home = () => {
               variants={staggerContainer}
             >
               <motion.span className="hero-label" variants={fadeInUp}>
-                Strategische Unternehmensberatung
+                Strategische Beratung
               </motion.span>
               <motion.h1 variants={fadeInUp}>
-                Sichern Sie mit uns die Zukunft Ihres Unternehmens
+                Ihre Zukunft. Strategisch gesichert.
               </motion.h1>
               <motion.p variants={fadeInUp}>
-                Nicht nur in Zeiten wie diesen ist es wichtig ein Unternehmen auf solide Beine zu stellen.
-                Liquiditätssicherung, Wertebildung, Innovationskraft und Marktanpassung sind nur einige
-                Stichwörter, zu denen es gilt die richtigen Instrumente einzusetzen.
+                Wir entwickeln mit Ihnen maßgeschneiderte Strategien für Finanzierung,
+                Wachstum und nachhaltige Unternehmensentwicklung.
               </motion.p>
               <motion.div className="hero-cta" variants={fadeInUp}>
                 <a href="tel:+436991331411" className="btn btn-primary">
-                  Reden wir darüber
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
+                  Gespräch vereinbaren
                 </a>
                 <a href="/expertisen" className="btn btn-outline">
                   Mehr erfahren
@@ -74,15 +70,14 @@ const Home = () => {
             </motion.div>
             <motion.div
               className="hero-visual"
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Compass size={350} />
+              <Compass size={280} />
             </motion.div>
           </div>
         </div>
-        <div className="hero-gradient" />
       </section>
 
       {/* Services Section */}
@@ -93,10 +88,10 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <span>Unsere Schwerpunkte</span>
-            <h2>Aktuelle Schwerpunkte</h2>
+            <span>Leistungen</span>
+            <h2>Unsere Schwerpunkte</h2>
           </motion.div>
 
           <motion.div
@@ -126,15 +121,16 @@ const Home = () => {
         <div className="container">
           <motion.div
             className="philosophy-content"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             <blockquote>
               <p>
-                "Auch ein Unternehmen, ein Startup oder ein Projekt sind 'Produkte', die richtig entwickelt,
-                beworben und auf den richtigen Märkten platziert werden müssen!"
+                Der richtige Zeitpunkt, das richtige Produkt,
+                die richtige Positionierung — das ist kein Zufall,
+                sondern Strategie.
               </p>
             </blockquote>
           </motion.div>
@@ -148,31 +144,34 @@ const Home = () => {
           >
             <motion.div className="value-item" variants={fadeInUp}>
               <div className="value-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 6v6l4 2"/>
                 </svg>
               </div>
-              <p>Unser Engagement für Ihr Unternehmen wird von uns mit Weitblick behandelt.</p>
+              <h4>Weitblick</h4>
+              <p>Strategien mit langfristiger Perspektive für Ihr Unternehmen.</p>
             </motion.div>
             <motion.div className="value-item" variants={fadeInUp}>
               <div className="value-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                   <path d="M2 17l10 5 10-5"/>
                   <path d="M2 12l10 5 10-5"/>
                 </svg>
               </div>
-              <p>Ob Unternehmen, Projekt oder Produkt - fachliche Kompetenz ist nur ein Werkzeug.</p>
+              <h4>Kompetenz</h4>
+              <p>Fundiertes Fachwissen aus jahrzehntelanger Erfahrung.</p>
             </motion.div>
             <motion.div className="value-item" variants={fadeInUp}>
               <div className="value-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                   <circle cx="12" cy="7" r="4"/>
                 </svg>
               </div>
-              <p>Viel wichtiger ist die Identifikation mit Ihren Intentionen und Herausforderungen.</p>
+              <h4>Partnerschaft</h4>
+              <p>Echte Identifikation mit Ihren Zielen und Herausforderungen.</p>
             </motion.div>
           </motion.div>
         </div>
@@ -183,14 +182,20 @@ const Home = () => {
         <div className="container">
           <motion.div
             className="cta-content"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
-            <span>Nehmen Sie uns beim Wort</span>
-            <h2>"Reden wir darüber"</h2>
+            <span>Ihr nächster Schritt</span>
+            <h2>Lassen Sie uns starten</h2>
+            <p className="cta-subtitle">
+              Vereinbaren Sie ein unverbindliches Erstgespräch.
+            </p>
             <a href="tel:+436991331411" className="cta-phone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
               +43 699 133 14 111
             </a>
           </motion.div>
