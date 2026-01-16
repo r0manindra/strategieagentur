@@ -156,14 +156,9 @@
 
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
+  .nav-links,
   .nav-cta {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    margin-right: 12px;
+    display: none;
   }
 
   .menu-toggle {
@@ -172,5 +167,12 @@
 
   .mobile-menu {
     display: block;
+  }
+
+  .mobile-menu .btn {
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
   }
 }
